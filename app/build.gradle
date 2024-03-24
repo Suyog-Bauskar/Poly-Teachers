@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.suyogbauskar.attenteachers'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.suyogbauskar.attenteachers"
+        minSdk 26
+        targetSdk 33
+        versionCode 20
+        versionName "1.0.18"
+        resConfigs "en"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release2 {
+            minifyEnabled false
+            applicationIdSuffix ".two"
+            versionNameSuffix "-two"
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //Added by me
+    implementation 'com.google.gms:google-services:4.3.15'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.github.f0ris.sweetalert:library:1.5.6'
+    implementation 'org.apache.poi:poi:5.2.2'
+    implementation 'org.apache.poi:poi-ooxml:5.2.2'
+    implementation 'androidx.preference:preference:1.2.0'
+    def lifecycle_version = "2.5.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation 'com.github.kal72:RackMonthPicker:1.6.1'
+    implementation 'com.github.mejdi14:Flat-Dialog-Android:1.0.5'
+    implementation 'com.github.uzairiqbal91:CircularTimerView:1.0'
+
+    // firebase
+    implementation platform('com.google.firebase:firebase-bom:30.4.1')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.android.gms:play-services-auth:20.4.1'
+    implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'com.google.firebase:firebase-storage:20.1.0'
+    implementation 'com.google.firebase:firebase-messaging:23.1.1'
+}

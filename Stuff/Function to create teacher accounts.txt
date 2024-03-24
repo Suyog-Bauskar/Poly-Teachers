@@ -1,0 +1,79 @@
+private void createTeachersAccount() {
+        String[] UIDs = new String[]{"FglJLEVkm1hokgnn6zw9cvSophm1"};
+
+        FirebaseDatabase.getInstance().getReference("teachers_data")
+                .child(UIDs[0])
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        snapshot.getRef().child("department").setValue("CO");
+                        snapshot.getRef().child("firstname").setValue("Parag");
+                        snapshot.getRef().child("lastname").setValue("Agrawal");
+                        snapshot.getRef().child("id").setValue("COPA1");
+                        snapshot.getRef().child("isAdmin").setValue(false);
+
+                        Map<String, Object> data1 = new HashMap<>();
+                        data1.put("A_count", 0);
+                        data1.put("A1_count", 0);
+                        data1.put("A2_count", 0);
+                        data1.put("A3_count", 0);
+                        data1.put("B_count", 0);
+                        data1.put("B1_count", 0);
+                        data1.put("B2_count", 0);
+                        data1.put("B3_count", 0);
+                        data1.put("C_count", 0);
+                        data1.put("C1_count", 0);
+                        data1.put("C2_count", 0);
+                        data1.put("C3_count", 0);
+                        data1.put("semester", 2);
+                        data1.put("subject_name", "Computer Peripheral And Hardware Maintenance");
+                        data1.put("subject_short_name", "CPH");
+                        String code1 = "22013";
+
+                        Map<String, Object> data2 = new HashMap<>();
+                        data2.put("A_count", 0);
+                        data2.put("A1_count", 0);
+                        data2.put("A2_count", 0);
+                        data2.put("A3_count", 0);
+                        data2.put("B_count", 0);
+                        data2.put("B1_count", 0);
+                        data2.put("B2_count", 0);
+                        data2.put("B3_count", 0);
+                        data2.put("C_count", 0);
+                        data2.put("C1_count", 0);
+                        data2.put("C2_count", 0);
+                        data2.put("C3_count", 0);
+                        data2.put("semester", 4);
+                        data2.put("subject_name", "Microprocessors");
+                        data2.put("subject_short_name", "MIC");
+                        String code2 = "22415";
+
+                        Map<String, Object> data3 = new HashMap<>();
+                        data3.put("A_count", 0);
+                        data3.put("A1_count", 0);
+                        data3.put("A2_count", 0);
+                        data3.put("A3_count", 0);
+                        data3.put("B_count", 0);
+                        data3.put("B1_count", 0);
+                        data3.put("B2_count", 0);
+                        data3.put("B3_count", 0);
+                        data3.put("C_count", 0);
+                        data3.put("C1_count", 0);
+                        data3.put("C2_count", 0);
+                        data3.put("C3_count", 0);
+                        data3.put("semester", 3);
+                        data3.put("subject_name", "Yash 3");
+                        data3.put("subject_short_name", "YR3");
+                        String code3 = "";
+
+                        snapshot.getRef().child("subjects").child(code1).setValue(data1);
+                        snapshot.getRef().child("subjects").child(code2).setValue(data2);
+                        snapshot.getRef().child("subjects").child(code3).setValue(data3);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(HomeActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }

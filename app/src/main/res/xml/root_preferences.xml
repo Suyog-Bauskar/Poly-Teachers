@@ -1,0 +1,15 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="Account">
+
+        <Preference
+            app:key="change_password"
+            app:title="Change Password" />
+
+        <Preference
+            app:key="sign_out"
+            app:title="Sign Out" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

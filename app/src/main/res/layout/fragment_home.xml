@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HomeFragment">
+
+    <Button
+        android:id="@+id/generateCodeAndStopBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/timer"
+        android:layout_marginTop="15dp"
+        android:text="Generate" />
+
+    <TextView
+        android:id="@+id/statusView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/codeView"
+        android:layout_marginBottom="20dp"
+        android:textAlignment="center"
+        android:textColor="#47D14D"
+        android:textSize="35sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/codeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/timer"
+        android:text="Generate\nCode"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/deleteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/generateCodeAndStopBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Delete"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <com.uzairiqbal.circulartimerview.CircularTimerView
+        android:id="@+id/timer"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:progressColor="#FF0000"
+        app:backgroundColor="#FF6A9D"
+        app:progressBackgroundColor="#00FF00"
+        app:backgroundWidth="6"
+        app:isClockwise="true"
+        app:textSize="30sp"
+        app:progressText="180"
+        app:maxValue="100"
+        app:startingPoint="top"
+        app:suffix=" sec"
+        app:progressTextColor="#eee"/>
+
+</RelativeLayout>
